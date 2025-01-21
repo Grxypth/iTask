@@ -8,9 +8,8 @@ module.exports = {
     './app/javascript/**/*.js',
     './app/views/**/*.{erb,haml,html,slim}',
       './node_modules/flowbite/**/*.js',
-      'node_modules/preline/dist/*.js',
+      '/node_modules/preline/dist/*.js',
   ],
-
   theme: {
     extend: {
       colors: {
