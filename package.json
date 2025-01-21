@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@stimulus-components/notification": "^3.0.0",
     "flowbite": "^2.5.2",
     "preline": "^2.7.0"
   }
