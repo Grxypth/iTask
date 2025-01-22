@@ -28,7 +28,8 @@ class TasksController < ApplicationController
       :description,
       :category_id,
       :priority,
-      :status
+      :status,
+      :due_date
     )
   end
 end
