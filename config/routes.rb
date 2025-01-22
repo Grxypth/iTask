@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :tasks do
     resources :comments, only: %i[create destroy]
   end
+  resources :tasks
 
   # Defines the root path route ("/")
   root "home#index"
