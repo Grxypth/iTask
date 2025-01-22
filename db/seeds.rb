@@ -1,9 +1,57 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+# db/seeds.rb
+
+# Create some categories
+category1 = Category.find_or_create_by(name: "İş")
+category1 = Category.find_or_create_by(name: "Kişisel")
+category1 = Category.find_or_create_by(name: "Alışveriş")
+category1 = Category.find_or_create_by(name: "Sağlık")
+
+# Find existing users by email
+user1 =
+  User.find_or_create_by(email: "john@example.com") do |user|
+    user.password = "password" # Ensure you set a password if using Devise or similar
+  end
+
+# Create some tasks
+Task.create(
+  title: "Complete project report",
+  description: "Finish the project report by the end of the week.",
+  due_date: DateTime.now + 7.days,
+  priority: :high,
+  status: :in_progress,
+  category: category1,
+  user: user1,
+  completed_at: nil
+)
+Task.create(
+  title: "Complete project report",
+  description: "Finish the project report by the end of the week.",
+  due_date: DateTime.now + 7.days,
+  priority: :high,
+  status: :in_progress,
+  category: category1,
+  user: user1,
+  completed_at: nil
+)
+
+Task.create(
+  title: "Complete project report",
+  description: "Finish the project report by the end of the week.",
+  due_date: DateTime.now + 7.days,
+  priority: :high,
+  status: :in_progress,
+  category: category1,
+  user: user1,
+  completed_at: nil
+)
+
+Task.create(
+  title: "Complete project report",
+  description: "Finish the project report by the end of the week.",
+  due_date: DateTime.now + 7.days,
+  priority: :high,
+  status: :in_progress,
+  category: category1,
+  user: user1,
+  completed_at: nil
+)
