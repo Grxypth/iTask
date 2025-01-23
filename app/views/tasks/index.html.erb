@@ -1,119 +1,136 @@
-<!-- Table Section -->
-<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-  <!-- Card -->
-  <div class="flex flex-col">
-    <div class="-m-1.5 overflow-x-auto">
-      <div class="p-1.5 min-w-full inline-block align-middle">
-        <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden dark:bg-neutral-900 dark:border-neutral-700">
-          <!-- Header -->
-          <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 dark:border-neutral-700">
-            <!-- Input -->
-            <div class="sm:col-span-1">
-              <label for="hs-as-table-product-review-search" class="sr-only">Search</label>
-              <div class="relative">
-                <input type="text" id="hs-as-table-product-review-search" name="hs-as-table-product-review-search" class="py-2 px-3 ps-11 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Search">
-                <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4">
-                  <svg class="shrink-0 size-4 text-gray-400 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+<div class="flex">
+  <div class="w-64 bg-gray-800 text-white min-h-screen p-4">
+    <h2 class="text-xl font-bold mb-4">Menu</h2>
+    <ul>
+      <li class="mb-2">
+        <%= link_to "Kategori Oluştur", new_category_path, class: "block py-2 px-4 rounded hover:bg-gray-700" %>
+      </li>
+      <li>
+        <%= button_to "Çıkış Yap", destroy_user_session_path, method: :delete, class: "block py-2 px-4 rounded hover:bg-gray-700" %>
+      </li>
+    </ul>
+  </div>
+  <!-- main-->
+  <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+    <!-- Card -->
+    <div class="flex flex-col lg:items-center lg:justify-center">
+      <div class="-m-1.5 overflow-x-auto">
+        <div class="p-1.5 min-w-full inline-block align-middle">
+          <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden dark:bg-neutral-900 dark:border-neutral-700">
+            <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 dark:border-neutral-700">
+              <div class="sm:col-span-1">
+                <label for="hs-as-table-product-review-search" class="sr-only">Search</label>
+                <div class="relative">
+                  <input type="text" id="hs-as-table-product-review-search" name="hs-as-table-product-review-search" class="py-2 px-3 ps-11 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Search">
+                  <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4">
+                    <svg class="shrink-0 size-4 text-gray-400 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="sm:col-span-2 md:grow">
-              <div class="flex justify-end gap-x-2">
-                <div class="inline-flex gap-x-2">
-                  <a class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800" href="#">
-                    Hepsini Görüntüle
-                  </a>
-                  <a class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="<%= new_task_path %>">
-                    <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
-                    İş Ekle
-                  </a>
+              <div class="sm:col-span-2 md:grow">
+                <div class="flex justify-end gap-x-2">
+                  <div class="inline-flex gap-x-2">
+                    <a class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800" href="#">
+                      Hepsini Görüntüle
+                    </a>
+                    <a class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="<%= new_task_path %>">
+                      <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                      İş Ekle
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
-          <thead class="bg-gray-50 dark:bg-neutral-800">
-            <tr>
-              <th scope="col" class="px-6 py-3 text-start">
-                <div class="flex items-center gap-x-2">
-                  <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
-                    İş
-                  </span>
-                </div>
-              </th>
-              <th scope="col" class="px-6 py-3 text-start">
-                <div class="flex items-center gap-x-2">
-                  <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
-                    Kategori
-                  </span>
-                </div>
-              </th>
-              <th scope="col" class="px-6 py-3 text-start">
-                <div class="flex items-center gap-x-2">
-                  <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
-                    Açıklama
-                  </span>
-                </div>
-              </th>
-              <th scope="col" class="px-6 py-3 text-start">
-                <div class="flex items-center gap-x-2">
-                  <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
-                    TARİH
-                  </span>
-                </div>
-              </th>
-              <th scope="col" class="px-6 py-3 text-start">
-                <div class="flex items-center gap-x-2">
-                  <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
-                    DURUM
-                  </span>
-                </div>
-              </th>
-              <th scope="col" class="px-6 py-3 text-start">
-                <div class="flex items-center gap-x-2">
-                  <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
-                    ÖNCELİK
-                  </span>
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
-            <% @tasks.each do |task| %>
-              <tr class="bg-white hover:bg-gray-50 dark:bg-neutral-900 dark:hover:bg-neutral-800">
-                <td class="size-px whitespace-nowrap align-top">
-                  <a class="block p-6" href="#">
-                    <div class="flex items-center gap-x-4">
-                      <div>
-                        <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-200"><%= task.title %></span>
+          <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
+            <thead class="bg-gray-50 dark:bg-neutral-800">
+              <tr>
+                <th scope="col" class="px-6 py-3 text-start">
+                  <div class="flex items-center gap-x-2">
+                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
+                      İş
+                    </span>
+                  </div>
+                </th>
+                <th scope="col" class="px-6 py-3 text-start">
+                  <div class="flex items-center gap-x-2">
+                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
+                      Kategori
+                    </span>
+                  </div>
+                </th>
+                <th scope="col" class="px-6 py-3 text-start">
+                  <div class="flex items-center gap-x-2">
+                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
+                      Açıklama
+                    </span>
+                  </div>
+                </th>
+                <th scope="col" class="px-6 py-3 text-start">
+                  <div class="flex items-center gap-x-2">
+                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
+                      TARİH
+                    </span>
+                  </div>
+                </th>
+                <th scope="col" class="px-6 py-3 text-start">
+                  <div class="flex items-center gap-x-2">
+                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
+                      DURUM
+                    </span>
+                  </div>
+                </th>
+                <th scope="col" class="px-6 py-3 text-start">
+                  <div class="flex items-center gap-x-2">
+                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
+                      ÖNCELİK
+                    </span>
+                  </div>
+                </th>
+                <th scope="col" class="px-6 py-3 text-start">
+                  <div class="flex items-center gap-x-2">
+                    <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
+                      Detay
+                    </span>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
+              <% @tasks.each do |task| %>
+                <tr class="bg-white hover:bg-gray-50 dark:bg-neutral-900 dark:hover:bg-neutral-800">
+                  <td class="size-px whitespace-nowrap align-top">
+                    <a class="block p-6" href="#">
+                      <div class="flex items-center gap-x-4">
+                        <div>
+                          <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-200"><%= task.title %></span>
+                        </div>
                       </div>
-                    </div>
-                  </a>
-                </td>
-                <td class="size-px whitespace-nowrap align-top">
-                  <a class="block p-6" href="#">
-                    <div class="flex items-center gap-x-3">
-                      <div class="grow">
-                        <span class="block text-sm text-gray-500 dark:text-neutral-500"><%= task.category.name %></span>
+                    </a>
+                  </td>
+                  <td class="size-px whitespace-nowrap align-top">
+                    <a class="block p-6" href="#">
+                      <div class="flex items-center gap-x-3">
+                        <div class="grow">
+                          <span class="block text-sm text-gray-500 dark:text-neutral-500"><%= task.category.name %></span>
+                        </div>
                       </div>
-                    </div>
-                  </a>
-                </td>
-                <td class="h-px w-72 min-w-72 align-top">
-                  <a class="block p-6" href="#">
-                    <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-200"><%= task.title %></span>
-                    <span class="block text-sm text-gray-500 dark:text-neutral-500"><%= task.description %></span>
-                  </a>
-                </td>
-                <td class="h-px w-72 min-w-72 align-top">
-                  <a class="block p-6" href="#">
-                    <span class="block text-sm font-semibold text-pink-800 dark:text-neutral-200"><%= task.due_date.strftime("%Y-%m-%d") %></span>
-                  </a>
-                </td>
-                <td class="size-px whitespace-nowrap align-top">
-                  <a class="block p-6" href="#">
-                    <span class="py-1 px-1.5 inline-flex items-center gap-x-1 text-xs font-medium rounded-full 
+                    </a>
+                  </td>
+                  <td class="h-px w-72 min-w-72 align-top">
+                    <a class="block p-6" href="#">
+                      <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-200"><%= task.title %></span>
+                      <span class="block text-sm text-gray-500 dark:text-neutral-500"><%= task.description %></span>
+                    </a>
+                  </td>
+                  <td class="h-px w-72 min-w-72 align-top">
+                    <a class="block p-6" href="#">
+                      <span class="block text-sm font-semibold text-black dark:text-neutral-200"><%= task.due_date.strftime("%d-%m-%Y") %></span>
+                    </a>
+                  </td>
+                  <td class="size-px whitespace-nowrap align-top">
+                    <a class="block p-6" href="#">
+                      <span class="py-1 px-1.5 inline-flex items-center gap-x-1 text-xs font-medium rounded-full 
                         <% if task.status == 'expired' %>
                             bg-red-100 text-red-800
                         <% elsif task.status == 'completed' %>
@@ -123,24 +140,24 @@
                         <% else %>
                             bg-blue-100 text-blue-600
                         <% end %>">
-                      <svg class="size-2.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                        <% if task.status == 'expired' %>
-                          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"></path>
-                        <% elsif task.status == 'in_progress' %>
-                          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path>
-                        <% elsif task.status == 'todo' %>
-                          <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"></path>
-                        <% else %>
-                          <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"></path>
-                        <% end %>
-                      </svg>
-                      <%= task.status.humanize %>
-                    </span>
-                  </a>
-                </td>
-                <td class="size-px whitespace-nowrap align-top">
-                  <a class="block p-6" href="#">
-                    <span class="text-sm 
+                        <svg class="size-2.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                          <% if task.status == 'expired' %>
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"></path>
+                          <% elsif task.status == 'in_progress' %>
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path>
+                          <% elsif task.status == 'todo' %>
+                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"></path>
+                          <% else %>
+                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"></path>
+                          <% end %>
+                        </svg>
+                        <%= task.status.humanize %>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="size-px whitespace-nowrap align-top">
+                    <a class="block p-6" href="#">
+                      <span class="text-sm 
                         <% if task.priority == 'low' %>
                             text-blue-500
                         <% elsif task.priority == 'medium' %>
@@ -148,40 +165,43 @@
                         <% else %>
                             text-red-600
                         <% end %>">
-                      <%= task.priority.humanize %>
-                    </span>
-                  </a>
-                </td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-        <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-t border-gray-200 dark:border-neutral-700">
-          <div class="max-w-sm space-y-3">
-            <select class="py-2 px-3 pe-9 block border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option selected>5</option>
-              <option>6</option>
-            </select>
-          </div>
-          <div>
-            <div class="inline-flex gap-x-2">
-              <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700">
-                <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-                Prev
-              </button>
-              <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700">
-                Next
-                <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-              </button>
+                        <%= task.priority.humanize %>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="size-px whitespace-nowrap align-top">
+                    <%= link_to "detay", task_path(task), class: "block p-6 text-blue-600 hover:underline" %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-t border-gray-200 dark:border-neutral-700">
+            <div class="max-w-sm space-y-3">
+              <select class="py-2 px-3 pe-9 block border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option selected>5</option>
+                <option>6</option>
+              </select>
+            </div>
+            <div>
+              <div class="inline-flex gap-x-2">
+                <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700">
+                  <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                  Prev
+                </button>
+                <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700">
+                  Next
+                  <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
