@@ -1,0 +1,25 @@
+<!-- app/views/categories/new.html.erb -->
+<div class="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
+  <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
+    <h1 class="text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100">Kategori Oluştur</h1>
+    <%= form_with(model: @category, local: true) do |form| %>
+      <% if @category.errors.any? %>
+        <div id="error_explanation" class="mb-4 p-4 bg-red-100 text-red-700 rounded-lg">
+          <h2 class="text-lg font-semibold"><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+          <ul class="mt-2 list-disc list-inside">
+            <% @category.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="mb-4">
+        <%= form.label :name, class: "block text-sm font-medium text-gray-700 dark:text-gray-300" %>
+        <%= form.text_field :name, class: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300" %>
+      </div>
+      <div class="actions">
+        <%= form.submit "Create Category", class: "w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:bg-blue-500 dark:hover:bg-blue-600" %>
+      </div>
+    <% end %>
+  </div>
+</div>
