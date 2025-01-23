@@ -13,4 +13,17 @@ class Task < ApplicationRecord
             :user,
             :category,
             presence: true
+
+  before_save :set_completed_at, if: :will_save_change_to_status?
+  before_save :check_due_date
+
+  private
+
+  def set_completed_at
+    self.completed_at = Time.current if status == "completed"
+  end
+
+  def check_due_date
+    self.status = "expired" if due_date.present? && due_date < Date.today
+  end
 end

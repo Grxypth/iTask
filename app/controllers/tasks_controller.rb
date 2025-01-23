@@ -1,9 +1,15 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_task, only: %i[show edit update destroy]
+  before_action :set_task, only: %i[show edit update destroy complete]
 
   def index
-    @tasks = current_user.tasks
+    @categories = Category.all
+    @tasks =
+      if params[:category_ids].present?
+        current_user.tasks.where(category_id: params[:category_ids])
+      else
+        current_user.tasks
+      end
   end
 
   def new
@@ -37,6 +43,11 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy
     redirect_to tasks_url, notice: "Task was successfully destroyed."
+  end
+
+  def complete
+    @task.update(status: "completed")
+    redirect_to @task, notice: "Task was successfully marked as completed."
   end
 
   private
