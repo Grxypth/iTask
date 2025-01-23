@@ -6,9 +6,13 @@ class TasksController < ApplicationController
     @categories = Category.all
     @tasks =
       if params[:category_ids].present?
-        current_user.tasks.where(category_id: params[:category_ids])
+        current_user
+          .tasks
+          .where(category_id: params[:category_ids])
+          .page(params[:page])
+          .per(5)
       else
-        current_user.tasks
+        current_user.tasks.page(params[:page]).per(5)
       end
   end
 

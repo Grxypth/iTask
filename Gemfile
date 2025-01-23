@@ -69,4 +69,5 @@ group :test do
   gem "selenium-webdriver"
 end
 gem "pagy"
+gem "kaminari"
 gem "devise", "~> 4.9"
