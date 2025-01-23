@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :tasks do
     resources :comments, only: %i[create destroy]
+    member { patch :complete }
   end
   resources :tasks
   get "tasks/filter", to: "tasks#filter"
