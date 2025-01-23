@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :comments, only: %i[create destroy]
   end
   resources :tasks
+  get "tasks/filter", to: "tasks#filter"
   resources :categories, only: %i[new create]
 
   # Defines the root path route ("/")
