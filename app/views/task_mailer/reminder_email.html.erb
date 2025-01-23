@@ -1,0 +1,5 @@
+<h1>Reminder: Tamamlaman gereken bir issue var</h1>
+<p>Hello <%= @user.email %>,</p>
+<p>Bu senin için bir hatırlatma 24 saatin var "<%= @task.title %>" is due soon.</p>
+<p><%= @task.description %></p>
+<p>Due date: <%= @task.due_date.strftime('%B %d, %Y at %I:%M %p') %></p>
