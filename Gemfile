@@ -68,5 +68,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
-
+gem "pagy"
+gem "kaminari"
 gem "devise", "~> 4.9"
