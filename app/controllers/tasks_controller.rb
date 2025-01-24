@@ -1,19 +1,26 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_task, only: %i[show edit update destroy complete]
-
   def index
     @categories = Category.all
-    @tasks =
-      if params[:category_ids].present?
-        current_user
-          .tasks
-          .where(category_id: params[:category_ids])
-          .page(params[:page])
-          .per(5)
-      else
-        current_user.tasks.page(params[:page]).per(5)
-      end
+    @tasks = current_user.tasks
+
+    if params[:category_ids].present?
+      @tasks = @tasks.where(category_id: params[:category_ids])
+    end
+
+    @tasks = @tasks.where(status: params[:status]) if params[:status].present?
+
+    if params[:due_date].present?
+      @tasks = @tasks.where(due_date: params[:due_date])
+    end
+
+    if params[:category_ids].blank? && params[:status].blank? &&
+         params[:due_date].blank?
+      @tasks = @tasks.page(params[:page]).per(5)
+    else
+      @tasks = @tasks.page(params[:page]).per(20)
+    end
   end
 
   def new

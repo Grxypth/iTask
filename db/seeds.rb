@@ -1,18 +1,15 @@
 # db/seeds.rb
 
-# Create some categories
 category1 = Category.find_or_create_by(name: "İş")
 category1 = Category.find_or_create_by(name: "Kişisel")
 category1 = Category.find_or_create_by(name: "Alışveriş")
 category1 = Category.find_or_create_by(name: "Sağlık")
 
-# Find existing users by email
 user1 =
   User.find_or_create_by(email: "john@example.com") do |user|
-    user.password = "password" # Ensure you set a password if using Devise or similar
+    user.password = "password"
   end
 
-# Create some tasks
 Task.create(
   title: "Complete project report",
   description: "Finish the project report by the end of the week.",
