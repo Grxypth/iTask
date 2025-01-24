@@ -16,6 +16,7 @@
       <%= link_to 'Back', tasks_path, class: "inline-block px-4 py-2 bg-gray-600 text-white rounded-lg shadow-sm hover:bg-gray-700" %>
       <% unless @task.completed? %>
         <%= button_to 'Complete', complete_task_path(@task), method: :patch, class: "inline-block px-4 py-2 bg-green-600 text-white rounded-lg shadow-sm hover:bg-green-700 ml-2" %>
+        <%= button_to 'Destroy', task_path(@task), method: :delete, class: "inline-block px-4 py-2 bg-red-600 text-white rounded-lg shadow-sm hover:bg-red-700 ml-2" %>
       <% end %>
     </div>
     <div class="mt-8">
